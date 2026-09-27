@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-gov-green: #123f62;
+  --color-gov-green-2: #176b9a;
+  --color-gov-gold: #e0a329;
+  --color-gov-text: #17324a;
+  --color-gov-muted: #64788a;
+  --color-gov-light: #f1f5f8;
+  --color-gov-border: #dbe4ea;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply m-0 bg-[#f5f7f9] text-gov-text antialiased;
+    font-family: "DM Sans", "Segoe UI", sans-serif;
+  }
+
+  h1, h2, h3, h4, strong { font-family: "Manrope", "DM Sans", sans-serif; }
+
+  button,
+  input,
+  textarea {
+    font: inherit;
+  }
+}
+
+@layer components {
+  .container-gov {
+    @apply mx-auto w-[92%] max-w-7xl;
+  }
+
+  .eyebrow {
+    @apply text-[10px] font-extrabold uppercase tracking-[1.5px] text-gov-gold;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-gov-gold px-4.5 py-3 text-xs font-bold text-white transition hover:-translate-y-0.5 hover:shadow-lg;
+  }
+
+  .btn-light {
+    @apply inline-flex items-center justify-center gap-2 rounded-md border border-white/35 bg-white/10 px-4.5 py-3 text-xs font-bold text-white transition hover:bg-white hover:text-gov-green;
+  }
+
+  .card {
+    @apply rounded-lg border border-gov-border bg-white p-5 shadow-[0_5px_18px_rgba(23,50,74,0.05)];
+  }
+
+  .section-band { @apply border-t border-gov-border bg-white py-14 md:py-20; }
+  .photo-overlay { background: linear-gradient(90deg, rgba(8,38,59,.94) 0%, rgba(8,38,59,.65) 44%, rgba(8,38,59,.12) 100%); }
+}
